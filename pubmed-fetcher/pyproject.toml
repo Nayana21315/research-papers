@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "pubmed_fetcher"  # ✅ No spaces, uses underscore
+version = "0.1.0"
+description = "A PubMed research paper fetcher"
+authors = ["Your Name <your.email@example.com>"]
+readme = "README.md"
+packages = [{ include = "pubmed_fetcher", from = "src" }]  # ✅ Correct package path
+
+[tool.poetry.dependencies]
+python = "^3.8"  # ✅ Compatible Python version
+requests = "^2.32.3"
+pandas = "^2.2.3"
+argparse = "^1.4.0"
+python-dotenv = "^1.0.1"
+
+[tool.poetry.scripts]
+get-papers-list = "pubmed_fetcher.cli:main"  # ✅ Ensures 'cli.py' has a main() function!
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

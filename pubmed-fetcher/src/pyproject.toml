@@ -1,0 +1,9 @@
+[tool.poetry]
+name = "pubmed_fetcher"  # ✅ No spaces or hyphens!
+version = "0.1.0"
+description = "A PubMed research paper fetcher"
+authors = ["Your Name <your.email@example.com>"]
+packages = [{ include = "pubmed_fetcher", from = "src" }]  # ✅ Must match your folder structure!
+
+[tool.poetry.scripts]
+get-papers-list = "pubmed_fetcher.cli:main"  # ✅ Ensure cli.py has a main() function!
